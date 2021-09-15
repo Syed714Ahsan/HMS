@@ -70,12 +70,7 @@ class HostelControllern extends Controller
             $hostel->warden_name=$request->get('hostel_cell_number');
             $hostel->hostel_address=$request->get('hostel_address');
             $hostel->save();
-            // $user->phone_number=$request->get('phone_number');
-            // $user->user_password=$request->get('user_password');
-        
-            // $user->save();
-            // $id = $user->id;
-            // return view('add-hostel',['user_id'=>$id]);
+           
         
         
     }
