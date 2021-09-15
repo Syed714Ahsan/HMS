@@ -50,8 +50,9 @@ class UserController extends Controller
         
             $user->save();
             // return redirect('hostel-details');
+            // view('add-hostel',['user_id'=>$id]);
             $id = $user->id;
-            return view('add-hostel',['user_id'=>$id]);
+            return view('create-hostel',['user_id'=>$id]);
         }
        
     }

@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <h1>Create Account</h1>
-    <form action="/add-hostel" method="POST">
+    <form action="/store" method="POST">
     @csrf
     <div class="mb-3 mt-5 row">
         <label for="phoneNumber" class="col-sm-2 col-form-label">Cell Number</label>

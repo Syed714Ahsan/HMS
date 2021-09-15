@@ -24,9 +24,6 @@ Route::get('/hostel-details', function () {
 Route::get('/create-account', function () {
     return view('create-account');
 });
-Route::post('/add-hostel', function () {
-    return view('add-hostel');
-});
-Route::post('store',[UserController::class,'store']);
+Route::post('/store',[UserController::class,'store']);
 // Route::post('add-hostel',[UserController::class,'store']);
-Route::post('test',[HostelControllern::class,'store']);
+// Route::post('/test',[HostelControllern::class,'store']);

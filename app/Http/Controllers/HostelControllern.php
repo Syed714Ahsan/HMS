@@ -14,7 +14,7 @@ class HostelControllern extends Controller
      */
     public function index()
     {
-        return view('add-hostel');
+        return view('create-hostel');
     }
 
     /**
@@ -36,46 +36,48 @@ class HostelControllern extends Controller
     public function store(Request $request)
     {
       
-        $request->validate([
-            'city'=>'required',
-            'hostel_name'=>'required',
-            'hostel_type'=>'required',
-            'hostel_img'=>'required',
-            'hostel_person_qnty'=>'required',
-            'hostel_facilities'=>'required',
-            'hostel_cell_number'=>'required',
-            'hostel_address'=>'required',
+        // return $request->all();
+        // $request->validate([
+        //     'city'=>'required',
+        //     'hostel_name'=>'required',
+        //     'hostel_type'=>'required',
+        //     'hostel_img'=>'required',
+        //     'hostel_person_qnty'=>'required',
+        //     'hostel_facilities'=>'required',
+        //     'hostel_cell_number'=>'required',
+        //     'hostel_address'=>'required',
             
 
-            'hostel_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-        ]);
+        //     'hostel_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
+        // ]);
       
             $hostel = new Hostel;
             $hostel->user_id=$request->get('user_id');
             $hostel->city=$request->get('city');
             $hostel->hostel_name=$request->get('hostel_name');
             $hostel->hostel_type=$request->get('hostel_type');
+            $hostel->available_seats=$request->get('hostel_seates');
+
             $imgname = "";
             if ($request->hasFile('hostel_img')) {
                 $current = date('ymd') . rand(1, 999999) . time();
-                $file = $request->file('profile_image');
+                $file = $request->file('hostel_img');
                 $imgname = $current . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('/images'), $imgname);
-                $hostel->hostel_picture=  $imgname;
+                $file->move(public_path('images'), $imgname);
+                $hostel->hostel_img = $imgname;
             }
-          
-            $hostel->available_seats=$request->get('hostel_seates');
+
             $hostel->total_persons=$request->get('hostel_person_qnty');
             $hostel->facilities=$request->get('hostel_facilities');
             $hostel->warden_name=$request->get('hostel_cell_number');
             $hostel->hostel_address=$request->get('hostel_address');
+
+            // $imageName = time().'.'.$request->image->extension();  
+     
+            // $request->image->move(public_path('images'), $imageName);
             $hostel->save();
-            // $user->phone_number=$request->get('phone_number');
-            // $user->user_password=$request->get('user_password');
+        //    return redirect('create-account');
         
-            // $user->save();
-            // $id = $user->id;
-            // return view('add-hostel',['user_id'=>$id]);
         
         
     }

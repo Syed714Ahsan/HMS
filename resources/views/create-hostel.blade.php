@@ -2,11 +2,11 @@
 @section('content')
 <div class="container">
 
-    <form action="/test" method="POST">
+    <form action="/test" method="POST" enctype="multipart/form-data">
     <div class="mb-3 mt-5 row">
             @csrf
             <div class="col-sm-10">
-            <input type="text" class="form-control" name="user_id" value="1" id="hostelName"
+            <input type="text" class="form-control" name="user_id" value="{{$user_id}}" id="hostelName"
                     placeholder="EnterHostel Name">
             </div>
         </div>
