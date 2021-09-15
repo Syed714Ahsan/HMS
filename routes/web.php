@@ -15,15 +15,16 @@ use App\Http\Controllers\HostelControllern;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/hostel-details', function () {
-    return view('hostel-details');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/hostel-details', function () {
+//     return view('hostel-details');
+// });
 Route::get('/create-account', function () {
     return view('create-account');
 });
 Route::post('/store',[UserController::class,'store']);
-// Route::post('add-hostel',[UserController::class,'store']);
-// Route::post('/test',[HostelControllern::class,'store']);
+Route::post('/test',[HostelControllern::class,'store']);
+// Route::get('hostel-details',[HostelControllern::class,'show']);
+Route::get('welcome',[HostelControllern::class,'show']);

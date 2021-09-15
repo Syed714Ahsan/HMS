@@ -6,15 +6,15 @@
     <div class="mb-3 mt-5 row">
             @csrf
             <div class="col-sm-10">
-            <input type="text" class="form-control" name="user_id" value="{{$user_id}}" id="hostelName"
-                    placeholder="EnterHostel Name">
+            <input type="hidden" class="form-control" name="user_id" value="{{$user_id}}" id="hostelName"
+                   >
             </div>
         </div>
         <div class="mb-3 mt-5 row">
             <label for="city" class="col-sm-2 col-form-label">Select City</label>
             <div class="col-sm-10">
                 <select class="form-control" aria-label="Default select example" name="city" id="city">
-                    <option selected>Select City</option>
+    
                     <option value="Islamabad">Islamabad</option>
                     <option value="Rawalpindi">Rawalpindi</option>
 
@@ -25,14 +25,14 @@
             <label for="hostelName" class="col-sm-2 col-form-label">Hostel Name</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="hostel_name" id="hostelName"
-                    placeholder="EnterHostel Name">
+                    placeholder="Enter Hostel Name">
             </div>
         </div>
         <div class="mb-3 mt-5 row">
             <label for="hostelType" class="col-sm-2 col-form-label">Hostel Type</label>
             <div class="col-sm-10">
                 <select class="form-control" name="hostel_type" aria-label="Default select example" id="hostelType">
-                    <option selected>select hostel type</option>
+                    
                     <option value="1">Boys Hostel</option>
                     <option value="2">Girls Hostel</option>
 
@@ -42,21 +42,21 @@
         <div class="mb-3 mt-5 row">
             <label for="hostelPicture" class="col-sm-2 col-form-label">Hostel/Rooms picture</label>
             <div class="col-sm-10">
-                <input type="file" name="hostel_img" class="form-control" id="hostelPicture" placeholder="Choose File">
+                <input type="file" name="hostel_img" class="form-control" id="hostelPicture" placeholder="Upload Picture">
             </div>
         </div>
         <div class="mb-3 mt-5 row">
-            <label for="avaliableSeates" class="col-sm-2 col-form-label">Avaliable Seats</label>
+            <label for="avaliableSeates" class="col-sm-2 col-form-label">Available Seats</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="hostel_seates" id="avaliableSeates"
-                    placeholder="ENTER HOSTEL NAME">
+                <input type="number" class="form-control" name="hostel_seates" id="avaliableSeates"
+                    placeholder="Enter Available Seats">
             </div>
         </div>
         <div class="mb-3 mt-5 row">
             <label for="hostelPersons" class="col-sm-2 col-form-label">Person in one Room</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="hostel_person_qnty" id="hostelPersons"
-                    placeholder="ENTER HOSTEL NAME">
+                <input type="number" class="form-control" name="hostel_person_qnty" id="hostelPersons"
+                    placeholder="Enter Limit of persons in one room">
             </div>
         </div>
         <div class="mb-3 mt-5 row">
@@ -67,13 +67,13 @@
 
             </div>
         </div>
-        <!-- <div class="mb-3 mt-5 row">
+        <div class="mb-3 mt-5 row">
             <label for="hostelRent" class="col-sm-2 col-form-label">Rent Per Person</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="hostel_rent" id="hostelRent"
-                    placeholder="ENTER HOSTEL NAME">
+                    placeholder="Enter Hostel Rent">
             </div>
-        </div> -->
+        </div>
         <div class="mb-3 mt-5 row">
             <label for="hostelWarden" class="col-sm-2 col-form-label">Owner or Warden Number</label>
             <div class="col-sm-10">
@@ -85,7 +85,7 @@
             <label for="hostelAddress" class="col-sm-2 col-form-label">Complete Hostel Address <Address></Address>
                 </label>
             <div class="col-sm-10">
-                <textarea class="form-control" name="hostel_address" placeholder="Leave a comment here"
+                <textarea class="form-control" name="hostel_address" placeholder="Enter Hostel Address/Exact Location"
                     id="hostelAddress"></textarea>
 
             </div>

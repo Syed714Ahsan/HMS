@@ -20,6 +20,7 @@ class Hostel extends Model
         'available_seats',
         'total_persons',
         'facilities',
+        'hostel_rent',
         'warden_name',
         'hostel_address',
     ];

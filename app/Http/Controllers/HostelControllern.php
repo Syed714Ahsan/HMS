@@ -14,7 +14,7 @@ class HostelControllern extends Controller
      */
     public function index()
     {
-        return view('create-hostel');
+        
     }
 
     /**
@@ -35,22 +35,6 @@ class HostelControllern extends Controller
      */
     public function store(Request $request)
     {
-      
-        // return $request->all();
-        // $request->validate([
-        //     'city'=>'required',
-        //     'hostel_name'=>'required',
-        //     'hostel_type'=>'required',
-        //     'hostel_img'=>'required',
-        //     'hostel_person_qnty'=>'required',
-        //     'hostel_facilities'=>'required',
-        //     'hostel_cell_number'=>'required',
-        //     'hostel_address'=>'required',
-            
-
-        //     'hostel_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-        // ]);
-      
             $hostel = new Hostel;
             $hostel->user_id=$request->get('user_id');
             $hostel->city=$request->get('city');
@@ -69,18 +53,19 @@ class HostelControllern extends Controller
 
             $hostel->total_persons=$request->get('hostel_person_qnty');
             $hostel->facilities=$request->get('hostel_facilities');
+            $hostel->hostel_rent=$request->get('hostel_rent');
             $hostel->warden_name=$request->get('hostel_cell_number');
             $hostel->hostel_address=$request->get('hostel_address');
-
-            // $imageName = time().'.'.$request->image->extension();  
-     
-            // $request->image->move(public_path('images'), $imageName);
             $hostel->save();
-        //    return redirect('create-account');
+           return redirect('/welcome');
         
         
         
     }
+    // public function hostelsList(){
+    //     $hostels = Hostels::all();
+    //     return view('hostel-details',['hostels'=>$hostels]);
+    // }
 
     /**
      * Display the specified resource.
@@ -90,7 +75,8 @@ class HostelControllern extends Controller
      */
     public function show(Hostel $hostel)
     {
-        //
+        $hostel= Hostel::all();
+        return view('welcome',['hostels'=>$hostel]);
     }
 
     /**
