@@ -78,7 +78,13 @@ class HostelControllern extends Controller
         $hostel= Hostel::all();
         return view('welcome',['hostels'=>$hostel]);
     }
+     public function getHostelDetails(Hostel $hostel, $id)
+     {
+         $hostel_details = Hostel::find($id);
 
+         return view('hostel-details',['hostel_details'=>$hostel_details]);
+
+     }
     /**
      * Show the form for editing the specified resource.
      *

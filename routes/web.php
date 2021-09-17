@@ -28,3 +28,4 @@ Route::post('/store',[UserController::class,'store']);
 Route::post('/test',[HostelControllern::class,'store']);
 // Route::get('hostel-details',[HostelControllern::class,'show']);
 Route::get('welcome',[HostelControllern::class,'show']);
+Route::get('hostel-details/{id}',[HostelControllern::class,'getHostelDetails']);

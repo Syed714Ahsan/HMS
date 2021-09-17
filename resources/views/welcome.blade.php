@@ -59,7 +59,7 @@
     
                            <h3>{{$hostel->hostel_address}}</h3>
         
-                            <a href="/hostel-details" class="btn btn-primary">Go somewhere</a>
+                            <a href="/hostel-details/{{$hostel->id}}" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>

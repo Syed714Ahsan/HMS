@@ -44,27 +44,27 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    @foreach($hostels as $hostel)
+
     <div class="row mt-5">
         <div class="col-12">
             <div class="card mb-3" style="max-width: 100%;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="/images/{{$hostel->hostel_img}}" class="img-fluid rounded-start" alt="...">
+                        <img src="/images/{{$hostel_details->hostel_img}}" class="img-fluid rounded-start" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Hostel Name: <b>{{$hostel->hostel_name}}</b> </h5>
-                            <h5 class="card-title">Avaliable Room : {{$hostel->available_seats}}</h5>
-                            <h5 class="card-title">Phone Number:{{$hostel->warden_name}} </h5>
-                            <p>Address :{{$hostel->hostel_address}}</p>
+                            <h5 class="card-title">Hostel Name: <b>{{$hostel_details->hostel_name}}</b> </h5>
+                            <h5 class="card-title">Avaliable Room : {{$hostel_details->available_seats}}</h5>
+                            <h5 class="card-title">Phone Number:{{$hostel_details->warden_name}} </h5>
+                            <p>Address :{{$hostel_details->hostel_address}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @endforeach
+   
   
   
 </div>
